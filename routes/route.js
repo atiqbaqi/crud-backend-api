@@ -8,5 +8,8 @@ router.get('/health',async (req, res) => {
 })
 
 router.post('/events',eventController.createEvent);
+router.get('/events',(req,res)=>{
+    return res.render('create');
+});
 
 module.exports=router;
