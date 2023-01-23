@@ -7,7 +7,7 @@
     "start": "nodemon server"
   },
   "keywords": [],
-  "author": "",
+  "author": "Atiqul Hoque",
   "license": "ISC",
   "dependencies": {
     "axios": "^1.2.3",
