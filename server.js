@@ -1,6 +1,7 @@
 const express = require('express');
 const app = express();
 const cors = require('cors');
+require('dotenv').config();
 const route = require('./routes/route');
 
 const app_port=8080;
