@@ -6,9 +6,9 @@
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <style>
-        body {
+        .container-fluid {
             display: flex;
-            /* align-items: center; */
+            align-items: center;
             justify-content: center;
         }
 
@@ -25,44 +25,48 @@
 </head>
 
 <body>
-    <div class="card text-center col-md-10" style="margin: .5rem;">
-        <div class="card-header">
-            <h5 class="card-title">Events</h5>
+    <div class="container-fluid">
+        <div class="card col-md-10" style="margin: .5rem;">
+            <div class="card-header">
+                <h5 class="card-title">Events</h5>
+            </div>
+            <div class="card-body"> 
+                <div id="loader" class="d-flex justify-content-center visually-hidden">
+                    <div class="spinner-border" role="status">
+                      <span class="visually-hidden">Loading...</span>
+                    </div>
+                </div>
+                <form method="post" url="/api/events" id="myform">
+                    <div id="alert" class="alert alert-warning alert-dismissible fade show visually-hidden" role="alert">
+                        <strong>Holy guacamole!</strong> You should check in on some of those fields below.
+                        <!-- <input type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"> -->
+                    </div>
+                    
+                    <div class="row">
+                        <div class="col-12">
+                            <label for="event_name" class="form-label">Name:</label>
+                            <input type="text" class="form-control" id="event_name" name="event_name">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-8">
+                            <input type="text" class="form-control text-center" id="event_location" name="event_location">
+                        </div>
+                        <div class="col-4">
+                            <input type="text" class="form-control text-center" id="event_date" name="event_date">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-1">
+                            <button type="submit" class="btn btn-primary">Create</button>
+                        </div>
+                        
+                    </div>
+                
+                </form>
+            </div>
         </div>
-        <div class="card-body"> 
-            <div id="loader" class="d-flex justify-content-center visually-hidden">
-                <div class="spinner-border" role="status">
-                  <span class="visually-hidden">Loading...</span>
-                </div>
-            </div>
-          <hr/>
-          <form method="post" url="/api/events" id="myform">
-            <div id="alert" class="alert alert-warning alert-dismissible fade show visually-hidden" role="alert">
-                <strong>Holy guacamole!</strong> You should check in on some of those fields below.
-                <!-- <input type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"> -->
-              </div>
-            
-            <div class="row">
-                <div class="col-12">
-                    <label for="event_name" class="form-label">Name:</label>
-                    <input type="text" class="form-control text-center" id="event_name" name="event_name">
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-8">
-                    <input type="text" class="form-control text-center" id="event_location" name="event_location">
-                </div>
-                <div class="col-4">
-                    <input type="text" class="form-control text-center" id="event_date" name="event_date">
-                </div>
-            </div>
-            <div class="row">
-                <button type="submit" class="btn btn-primary">Create</button>
-            </div>
-            
-            </form>
-        </div>
-      </div>
+    </div>
       <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <!-- Option 1: Bootstrap Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
