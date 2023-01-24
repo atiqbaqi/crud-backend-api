@@ -13,9 +13,9 @@ router.get('/health',async (req, res) => {
 router.post('/login', AuthController.login);
 
 //create new event
-router.post('/events',auth,EventController.createEvent);
+router.post('/events', auth, EventController.createEvent);
 
 //list of events
-router.get('/events', EventController.listEvents);
+router.get('/events', auth, EventController.listEvents);
 
 module.exports=router;
