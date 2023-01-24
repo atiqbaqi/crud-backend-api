@@ -14,8 +14,8 @@ router.post('/login', AuthController.login);
 
 //create new event
 router.post('/events',auth,EventController.createEvent);
-router.get('/events',(req,res)=>{
-    return res.render('create');
-});
+
+//list of events
+router.get('/events', EventController.listEvents);
 
 module.exports=router;
