@@ -4,7 +4,7 @@ const cors = require('cors');
 require('dotenv').config();
 const route = require('./routes/route');
 
-const app_port=8080;
+const app_port=process.env.APP_PORT || 8080;
 
 // Tell Express to use EJS as the template engine
 app.set('view engine', 'ejs');

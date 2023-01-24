@@ -1,9 +1,9 @@
-const knex_db_con = require('../db/db_config');
+const db = require('../db/db_config');
 
 module.exports = {
     async createEvent(req,res){
         try {
-            await knex_db_con('events')
+            await db('events')
             .insert({
                 event_name: req.body.event_name,
                 event_location: req.body.event_location,

@@ -1,5 +1,7 @@
 const router = require('express').Router();
-const eventController = require('../controller/index');
+const EventController = require('../controller/EventController');
+const AuthController = require('../controller/AuthController');
+const auth = require('../middleware/auth');
 
 router.get('/health',async (req, res) => {
     const clientIp = req.headers['x-forwarded-for'] || req.socket.remoteAddress;
@@ -7,7 +9,11 @@ router.get('/health',async (req, res) => {
     res.status(200).send('health status api');
 })
 
-router.post('/events',eventController.createEvent);
+// login
+router.post('/login', AuthController.login);
+
+//create new event
+router.post('/events',auth,EventController.createEvent);
 router.get('/events',(req,res)=>{
     return res.render('create');
 });
