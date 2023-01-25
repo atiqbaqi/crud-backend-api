@@ -23,9 +23,9 @@ router.post('/events', auth, EventController.createEvent);
 router.get('/events', auth, EventController.listEvents);
 
 //update event
-router.put('/events/:id', EventController.updateEvent);
+router.put('/events/:id', auth, EventController.updateEvent);
 
 //read event
-router.get('/events/:id',EventController.selectEvent);
+router.get('/events/:id', auth, EventController.selectEvent);
 
 module.exports=router;
