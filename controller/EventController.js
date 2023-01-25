@@ -18,17 +18,15 @@ module.exports = {
 
     async listEvents(req, res){
         try {
-            let page = req.query.page || 1;
-            let size = req.query.size || 5;
-            // calculate starting and ending position
-            const start = (page - 1) * size;
-            const end = start + size;
+            let pageNumber = parseInt(req.query.page) || 1;
+            let pageSize = parseInt(req.query.size) || 5;
+            console.log(pageNumber+'>>'+pageSize);
+            const totalEvents = await db('events').count('* as total').first();
+            //const totalPages = Math.ceil(totalEvents.total / pageSize);
 
-            const data = await db('events').select('*');
+            const data = await db.select().from('events').limit(pageSize).offset((pageNumber - 1) * pageSize);
 
-            // slice the data
-            const result = data.slice(start, end);
-            return res.status(200).send({events:result,page:page,size:size});
+            return res.status(200).json({data:data,recordsTotal:totalEvents.total});
         } catch (error) {
             console.log(error);
             return res.status(500).send('something went wrong');
