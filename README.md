@@ -11,7 +11,7 @@ This repository is a basic nodeJS and MySQL CRUD API.
 3. Go to the application folder and open a terminal.
 
 4. Install the application dependencies with the next command:
-    >npm run start
+    >npm install
 
 5. Execute the next command in the terminal.
     >npm start
