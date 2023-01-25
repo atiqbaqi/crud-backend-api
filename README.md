@@ -1,4 +1,4 @@
-# RSTFUL CRUD API
+# RESTful CRUD API
 
 This repository is a basic nodeJS and MySQL CRUD API.
 
