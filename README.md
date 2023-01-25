@@ -2,7 +2,7 @@
 
 This repository is a basic nodeJS and MySQL CRUD API.
 
-## Install
+## Installation guide
 
 1. You need to create the database which is located in the "db" folder.
 
