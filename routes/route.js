@@ -28,4 +28,7 @@ router.put('/events/:id', auth, EventController.updateEvent);
 //read event
 router.get('/events/:id', auth, EventController.selectEvent);
 
+//delete event
+router.delete('/events/:id', auth, EventController.deleteEvent);
+
 module.exports=router;

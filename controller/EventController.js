@@ -61,5 +61,16 @@ module.exports = {
             console.log(error);
             return res.status(500).send('something went wrong');
         }
+    },
+
+    async deleteEvent(req,res) {
+        try {
+            const id = req.params.id;
+            await db('events').del().where({id:id});
+            return res.status(200).send('event deleted successfully');
+        } catch (error) {
+            console.log(error);
+            return res.status(500).send('something went wrong');
+        }
     }
 }
