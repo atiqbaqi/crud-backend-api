@@ -13,9 +13,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use('/api',route);
 
-app.get('/api',(req,res)=>{
-    return res.status(200).send('Welcome');
-});
+
 
 app.listen(app_port,()=>{
     console.log(`listening on ${app_port}`);

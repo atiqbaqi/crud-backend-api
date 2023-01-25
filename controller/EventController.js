@@ -33,5 +33,33 @@ module.exports = {
             console.log(error);
             return res.status(500).send('something went wrong');
         }
+    },
+
+    async updateEvent(req,res){
+        try {
+            const id = req.params.id;
+            await db('events')
+            .update({
+                event_name: req.body.event_name,
+                event_location: req.body.event_location,
+                event_date: req.body.event_date
+            }).where({id:id});
+            let updatedData = await db('events').where({id:id}).first('*');
+            return res.status(200).send(updatedData);
+        } catch (error) {
+            console.log(error);
+            return res.status(500).send('something went wrong');
+        }
+    },
+
+    async selectEvent(req,res){
+        try {
+            const id = req.params.id;
+            let data = await db('events').where({id:id}).first('*');
+            return res.status(200).send(data);
+        } catch (error) {
+            console.log(error);
+            return res.status(500).send('something went wrong');
+        }
     }
 }
