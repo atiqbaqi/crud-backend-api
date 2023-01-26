@@ -13,16 +13,10 @@ app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
-//increase the HTTP header security usign helmet
-app.use(
-    helmet.contentSecurityPolicy({
-        useDefaults: true,
-        directives: {
-            "script-src": ["'self'", "http://localhost:8080"],
-            "style-src": null,
-        },
-    })
-  );
+//configure it to increase the HTTP header security usign helmet
+app.use(helmet());
+
+// Routing with prefix
 app.use('/api',route);
 
 
