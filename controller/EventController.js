@@ -1,4 +1,6 @@
 const db = require('../db/db_config');
+const moment = require('moment');
+
 
 module.exports = {
     async createEvent(req,res){
@@ -25,6 +27,10 @@ module.exports = {
             //const totalPages = Math.ceil(totalEvents.total / pageSize);
 
             const data = await db.select().from('events').limit(pageSize).offset((pageNumber - 1) * pageSize);
+
+            for(let i = 0; i < data.length; i++) {
+                data[i].event_date = moment(data[i].event_date).format("YYYY-MM-DD HH:mm")+' UTC';
+            }
 
             return res.status(200).json({data:data,recordsTotal:totalEvents.total});
         } catch (error) {
