@@ -18,7 +18,7 @@ app.use(
     helmet.contentSecurityPolicy({
         useDefaults: true,
         directives: {
-            "script-src": ["'self'", "securecoding.com"],
+            "script-src": ["'self'", "http://localhost:8080"],
             "style-src": null,
         },
     })
