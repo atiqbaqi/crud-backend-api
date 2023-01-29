@@ -4,19 +4,28 @@ This repository is a basic nodeJS and MySQL CRUD API.
 
 ## Installation guide
 
-1. You need to create the database which is located in the "db" folder.
+### 💪🏻 Non-Docker
 
-2. You need to install nodejs and its package manager npm.
+Required Tools: 
+- [Node.js](https://nodejs.org/en/download/)
+- [Git](https://git-scm.com/downloads) 
 
-3. Go to the application folder and open a terminal.
+1. You need to install nodejs and its package manager npm.
 
-4. Install the application dependencies with the next command:
+2. Clone git repository -
+    ```bash
+    git clone https://github.com/atiqbaqi/crud-backend-api.git
+    ```
+
+3. You need to create the database which is located in the "db" folder.
+
+4. Go to the application folder and open a terminal.
+
+5. Install the application dependencies with the next command:
     >npm install
 
-5. Execute the next command in the terminal.
+6. Execute the next command in the terminal.
     >npm start
-
-6. Access using the following url: <a href="http://localhost:8080" target="__blank">http://localhost:8080</a>
 
 ### 🐳 Docker
 
@@ -28,6 +37,8 @@ docker build -t crud-api .
 ```bash
 docker run --name crud-api --rm -p 8080:8080 crud-api
 ```
+
+<b>Finally access using the following url: <a href="http://localhost:8080" target="__blank">http://localhost:8080</a></b>
 
 ## Technologies used
 
