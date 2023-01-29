@@ -18,6 +18,17 @@ This repository is a basic nodeJS and MySQL CRUD API.
 
 6. Access using the following url: <a href="http://localhost:8080" target="__blank">http://localhost:8080</a>
 
+### 🐳 Docker
+
+1. Build image
+```bash
+docker build -t crud-api .
+```
+2. create container from image and run
+```bash
+docker run --name crud-api --rm -p 8080:8080 crud-api
+```
+
 ## Technologies used
 
 ![NodeJS](https://img.shields.io/badge/node.js-6DA55F?style=for-the-badge&logo=node.js&logoColor=white)
