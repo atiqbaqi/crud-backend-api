@@ -2,6 +2,8 @@
 
 This repository is a basic nodeJS and MySQL CRUD API.
 <br/><br/>
+POSTMAN COLLECTION - https://documenter.getpostman.com/view/7330118/2s935oN57W
+<br/><br/>
 Here is the link for a front end client which will consume this api - https://github.com/atiqbaqi/crud-frontend
 
 ## Installation guide
