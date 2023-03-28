@@ -11,9 +11,12 @@ module.exports = {
         if (user_info) {
             // if the user is authenticated, generate a JWT
             const token = jwt.sign({
-              username: user_info.user_name,
+                user_id: user_info.id,
+                username: user_info.user_name,
             }, process.env.ACESSS_TOKEN_SECRET
             ,{expiresIn:1800});//30 min
+            // Store the JWT token in the session
+            req.session.token = token;
             return res.status(200).json({ token });
         } else {
             // if the user is not authenticated, return invalid message
