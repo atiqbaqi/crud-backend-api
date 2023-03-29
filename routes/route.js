@@ -31,4 +31,10 @@ router.get('/events/:id', auth, EventController.selectEvent);
 //delete event
 router.delete('/events/:id', auth, EventController.deleteEvent);
 
+//sign up
+router.post('/signup', AuthController.signup);
+
+//sign up
+router.post('/check-user-info', AuthController.checkUserInfo);
+
 module.exports=router;

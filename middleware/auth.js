@@ -6,7 +6,8 @@ const auth = async (req, res, next) => {
     const token = req.headers.authorization.split(' ')[1];
     // verify the JWT using the secret
     try {
-      jwt.verify(token, process.env.ACESSS_TOKEN_SECRET);
+      let v = jwt.verify(token, process.env.ACESSS_TOKEN_SECRET);
+      console.log(v);
       next();  
     } catch (error) {
         console.error(error);

@@ -9,7 +9,8 @@ module.exports = {
             .insert({
                 event_name: req.body.event_name,
                 event_location: req.body.event_location,
-                event_date: req.body.event_date
+                event_date: req.body.event_date,
+                created_by: req.body.created_by
             });
             return res.status(200).json({message:'successfully created event'});
         } catch (error) {
@@ -46,7 +47,8 @@ module.exports = {
             .update({
                 event_name: req.body.event_name,
                 event_location: req.body.event_location,
-                event_date: req.body.event_date
+                event_date: req.body.event_date,
+                updated_by: req.body.updated_by
             }).where({id:id});
             let updatedData = await db('events').where({id:id}).first('*');
             return res.status(200).send(updatedData);
